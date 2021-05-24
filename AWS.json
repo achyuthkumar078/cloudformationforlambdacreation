@@ -1,0 +1,22 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Template to create the lambda function",
+    "Resources": {
+        "LambdaFunctionResource": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "FunctionName": "TestLambda",
+                "Code": {
+                                "S3Bucket": "testbucketforachuth",
+                                "S3Key": "Hello.zip"
+                },
+                "Description": "Used to print the print Hello world",
+                "Handler": "Hello.lambda_handler",
+                "Role": "arn:aws:iam::438173332536:role/s3fullacc",
+                "Runtime" : "python3.8",
+                "Timeout": 120
+
+                }
+            }
+        }
+}
